@@ -8,10 +8,10 @@
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/styles.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" />
     <link rel="stylesheet" media="screen" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <script src="assets/javascript/game.js"></script>
+    
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <!-- Added link to the jQuery Library -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ 
 </head>
 <body>
     <div class="container">
@@ -34,40 +34,36 @@
                             <h2>Random Number: <span id="random"></span></h2>
                         </div>
                         <div class="col-md-8" style="background-color:mediumorchid;">
-                            <h3>Wins: <span id="wins"></span></h3>
-                            <h3>Losses: <span id="losses"></span></h3>
+                            <h3>Wins: <span id="wins">0</span></h3>
+                            <h3>Losses: <span id="losses">0</span></h3>
                         </div>
                     </div>
                 <div class="row crystal">
-                    <div class="col-md-4">    
-                        <img src="assets/images/greencrystal.jpg" class="gem">                
+                    <div class="col-md-3">    
+                        <img src="assets/images/greencrystal.jpg" class="gem" id="green">                
                     </div>
-                    <div class="col-md-4">  
-                        <img src="assets/images/purplecrystal.jpg" class="gem">
-                        </div>
-                    <div class="col-md-4">                    
-                        <img src="assets/images/redcrystal.jpg" class="gem">
+                    <div class="col-md-3">                    
+                        <img src="assets/images/bluecrystal.jpeg" class="gem" id="blue">
                             </div>
+                    <div class="col-md-3">                    
+                        <img src="assets/images/redcrystal.jpg" class="gem" id="red">
+                            </div>
+                       
+                     <div class="col-md-3">  
+                        <img src="assets/images/purplecrystal.jpg" class="gem" id="purple">                           </div>
+
+
                 </div>
                 <div class="row">
-                    <div class="col-md-6" style="background-color: lightcoral;"><h3>Your total score: <span id="totalscore">100</span></h3></div>
+                    <div class="col-md-6" style="background-color: lightcoral;"><h3>Your total score: <span id="totalscore">0</span></h3></div>
                     
                 </div>
                 
             </div>
         </div>
     </div>
-    <script type="text/javascript">
-
-        $(document).ready(function() {
-    
-    var random = Math.floor(Math.random() * 99) + 1;
-    $("#random").html(random);
-        });
-//generate random number for gems
-    var gemrandom = Math.floor(math.random() * 9)  + 1;
-    
-
-</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="assets/javascript/game.js"></script>
+   
 </body>
 </html>
