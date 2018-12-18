@@ -4,58 +4,121 @@
 var totalscore = 0;
 var wins = 0;
 var losses = 0;
+var randomNum
+var blue
+var green
+var purple
+var red
+
+
 
 $("#wins").text(wins);
 
-$("#totalscore").text(totalscore); 
- 
-  
+$("#totalscore").text(totalscore);   
    
 //generate random number for gems
 
+function randomizer () {
 var random = Math.floor(Math.random() * 99) + 1;
-$("#random").html(random);
+randomNum = random;
+$("#random").html(randomNum);
+
     
     var bluerandom = Math.floor(Math.random() * 14)  + 1;
+    blue = bluerandom;
     var greenrandom = Math.floor(Math.random() * 14)  + 1;
+    green = greenrandom;
     var redrandom = Math.floor(Math.random() * 14)  + 1;
+    red = redrandom;
     var purplerandom = Math.floor(Math.random() * 14)  + 1;
-    
-    
+    purple = purplerandom;
+
+
+// reset totalscore $("#totalscore").empty();
+
+
+}  
+  randomizer();  
+
 //add user clicks to total
    
       $("#blue").click(function(){        
-        totalscore = totalscore + bluerandom;
-        $("#totalscore").html(totalscore);      
-        if (totalscore > random) {
+        totalscore = totalscore + blue;
+        $("#totalscore").html(totalscore);
+        $("#message").empty();
+          
+        if (totalscore > randomNum) {
            $("#message").append("Sorry, you went over. &#9785;");
            losses++;
            $("#losses").text(losses);
            reset();          
         }
 
-        else if (totalscore==random){
+        else if (totalscore==randomNum){
             $("#message").append("Looks like we have a winner! &#9786;");
+            wins++;
             $("#wins").text(wins);
+            reset();  
         }
       });
 
       $("#red").click(function(){        
-        totalscore = totalscore + redrandom;
+        totalscore = totalscore + red;
         $("#totalscore").html(totalscore);
-      
+        $("#message").empty();
+
+        if (totalscore > randomNum) {
+          $("#message").append("Sorry, you went over. &#9785;");
+          losses++;
+          $("#losses").text(losses);
+          reset();          
+       }
+
+       else if (totalscore==randomNum){
+           $("#message").append("Looks like we have a winner! &#9786;");
+           wins++;
+           $("#wins").text(wins);
+           reset();  
+       }
       });
 
       $("#green").click(function(){        
-        totalscore = totalscore + greenrandom;
+        totalscore = totalscore + green;
         $("#totalscore").html(totalscore);
-      
+        $("#message").empty();
+
+        if (totalscore > randomNum) {
+          $("#message").append("Sorry, you went over. &#9785;");
+          losses++;
+          $("#losses").text(losses);
+          reset();          
+       }
+
+       else if (totalscore==randomNum){
+           $("#message").append("Looks like we have a winner! &#9786;");
+           wins++;
+           $("#wins").text(wins);
+           reset();  
+       }
       });
 
       $("#purple").click(function(){        
-        totalscore = totalscore + purplerandom;
+        totalscore = totalscore + purple;
         $("#totalscore").html(totalscore);
-      
+        $("#message").empty();
+        if (totalscore > randomNum) {
+          $("#message").append("Sorry, you went over. &#9785;");
+          losses++;
+          $("#losses").text(losses);
+          reset();          
+       }
+
+       else if (totalscore==randomNum){
+           $("#message").append("Looks like we have a winner! &#9786;");
+           wins++;
+           $("#wins").text(wins);
+           reset();  
+       }
       });
 
 
@@ -63,9 +126,10 @@ $("#random").html(random);
 
  //function to reset game 
  function reset() {
-   
     totalscore = 0;
-    $("#totalscore").empty();
+    randomizer(); 
+   
+ 
 
     //isOperatorChosen = false;
    
